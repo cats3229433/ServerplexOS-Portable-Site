@@ -45,11 +45,11 @@ h2{font-size:28px;font-weight:700;margin:0 0 6px;letter-spacing:.02em}
 :root[data-theme="light"] .codebox{background:#14152e}
 pre{margin:0;padding:16px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;line-height:1.55;color:#c9ccff}
 .status{font-size:13px;color:var(--a);min-height:18px;margin-top:10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
 .node{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:var(--panel);color:var(--text);text-decoration:none;transition:.2s;min-width:0}
 .node:hover{border-color:var(--a);box-shadow:0 0 22px var(--glow);transform:translateY(-2px)}
 .num{font-weight:800;color:var(--a);font-size:18px}
-.host{flex:1;font-size:13px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:ui-monospace,Menlo,monospace}
+.host{flex:1;font-size:12.5px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:ui-monospace,Menlo,monospace}
 .arr{color:var(--b);font-weight:700}
 footer{text-align:center;color:var(--muted);font-size:13px;padding:40px 0 30px;font-weight:300}
 </style></head>
@@ -117,7 +117,7 @@ function render(list){
     var a=document.createElement('a');a.className='node';a.href=u;a.target='_blank';a.rel='noopener';
     var host=u.replace(/^https?:\/\//,'').replace(/\/$/,'').split('.')[0];
     var n=document.createElement('span');n.className='num';n.textContent=String(i+1).padStart(2,'0');
-    var h=document.createElement('span');h.className='host';h.textContent=host;
+    var h=document.createElement('span');h.className='host';h.textContent=u;
     var r=document.createElement('span');r.className='arr';r.textContent='\u2197';
     a.append(n,h,r);grid.appendChild(a);
   });
